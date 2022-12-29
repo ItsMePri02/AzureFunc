@@ -21,12 +21,6 @@ steps:
 
 - task: SonarQubePrepare@5
   inputs:
-    SonarQube: 'azSonar'
-    scannerMode: 'MSBuild'
-    projectKey: 'mytestproject_dotnet-job'
-    projectName: 'DemoProject'
-
-- task: MSBuild@1
-  inputs:
-    solution: '**/*.sln'
+    scannerMode: 'CLI'
+    configMode: 'file'
 - task: SonarQubeAnalyze@5
